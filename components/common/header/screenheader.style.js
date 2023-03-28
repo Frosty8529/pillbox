@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
   btnContainer: {
     width: 40,
     height: 40,
-    backgroundColor: COLORS.white,
+    backgroundColor: 'transparent',
     borderRadius: SIZES.small / 1.25,
     justifyContent: "center",
     alignItems: "center",
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   btnImg: (dimension) => ({
     width: dimension,
     height: dimension,
-    borderRadius: SIZES.small / 1.25,
+    borderRadius: SIZES.small / 1.25
   }),
 });
 
