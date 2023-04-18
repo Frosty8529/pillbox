@@ -3,7 +3,8 @@ import { View, ScrollView, SafeAreaView } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
 
 import { COLORS, icons, images,  SIZES } from '../constants';
-import {Nearbyjobs, Popularjobs, ScreenHeaderBtn, Welcome} from '../components'
+import { Nearbyjobs, Popularjobs, ScreenHeaderBtn, Welcome, BottomNavigator } from '../components'
+import { BorderlessButton } from 'react-native-gesture-handler';
 
 const Home = () => {
     const router = useRouter();
@@ -33,6 +34,12 @@ const Home = () => {
                     <Popularjobs />
                 </View>
             </ScrollView>
+
+            <BottomNavigator 
+                iconUrlR={icons.notification} textR="Home"
+                iconUrlM={icons.notification} textM="Medicine"
+                iconUrlL={icons.notification} textL="Reminder"
+                dimension="60%" />
         </SafeAreaView>
     )
 }
