@@ -5,7 +5,7 @@ import styles from './medicineList.style'
 
 const List = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <Text>Medicine List</Text>
     </View>
   )

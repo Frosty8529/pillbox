@@ -16,7 +16,7 @@ const reminder = () => {
             options={{ 
                 headerStyle: { backgroundColor: COLORS.lightWhite},
                 headerLeft: () => (
-                    <ScreenHeaderBtn iconUrl={images.profile} dimension="100%" borderRadius="100"  />
+                    <ScreenHeaderBtn iconUrl={icons.editAccent} dimension="60%" />
                 ),
                 headerRight: () => (
                     <ScreenHeaderBtn iconUrl={icons.plus} dimension="60%" />

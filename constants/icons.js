@@ -18,6 +18,8 @@ import pillAccent from '../assets/icons/pillAccent.png'
 import reminder from '../assets/icons/reminder.png'
 import reminderAccent from '../assets/icons/reminderAccent.png'
 import plus from '../assets/icons/plus.png'
+import edit from '../assets/icons/edit.png'
+import editAccent from '../assets/icons/editAccent.png'
 
 export default {
   heart,
@@ -39,5 +41,7 @@ export default {
   pillAccent,
   reminder,
   reminderAccent,
-  plus
+  plus,
+  edit,
+  editAccent
 };
