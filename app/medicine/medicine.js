@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import { View, ScrollView, SafeAreaView } from 'react-native';
+import React from 'react'
+import { Text, View, ScrollView, SafeAreaView, ActivityIndicator, RefreshControl} from 'react-native'
 import { Stack, useRouter } from 'expo-router';
 
-import { COLORS, icons, images,  SIZES } from '../constants';
-import { Nearbyjobs, Popularjobs, ScreenHeaderBtn, Welcome, BottomNavigator } from '../components'
-import { BorderlessButton } from 'react-native-gesture-handler';
-import styles from '../components/common/bottomnav/bottomnav.style'
+import { COLORS, icons, images,  SIZES } from '../../constants'
+import { Slot, ScreenHeaderBtn, List, BottomNavigator } from '../../components'
 
-const Home = () => {
+import styles from '../../components/common/bottomnav/bottomnav.style';
+
+const medicine = () => {
     const router = useRouter();
 
     return (
@@ -19,9 +19,9 @@ const Home = () => {
                     <ScreenHeaderBtn iconUrl={images.profile} dimension="100%" borderRadius="100"  />
                 ),
                 headerRight: () => (
-                    <ScreenHeaderBtn iconUrl={icons.notification} dimension="60%" />
+                    <ScreenHeaderBtn iconUrl={icons.plus} dimension="60%" />
                 ),
-                headerTitle: "PillBox"
+                headerTitle: "Medicine"
                 }}
             />
 
@@ -31,18 +31,18 @@ const Home = () => {
                     flex: 1,
                     padding: SIZES.medium
                 }}>
-                    <Welcome />
-                    <Popularjobs />
+                    <Slot />
+                    <List />
                 </View>
             </ScrollView>
 
             <BottomNavigator 
-                icon1={icons.homeAccent} style1={styles.captionAccent}
-                icon2={icons.pill} style2={styles.caption}
+                icon1={icons.home} style1={styles.caption}
+                icon2={icons.pillAccent} style2={styles.captionAccent}
                 icon3={icons.reminder} style3={styles.caption}
             />
         </SafeAreaView>
     )
 }
 
-export default Home;
+export default medicine;

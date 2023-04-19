@@ -4,7 +4,7 @@ import { COLORS, FONT, SIZES } from "../../../constants";
 
 const styles = StyleSheet.create({
   btnContainer: {
-    width: 40,
+    // width: 40,
     height: 40,
     backgroundColor: 'transparent',
     borderRadius: SIZES.small / 1.25,
@@ -12,17 +12,26 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flexDirection: "column"
   },
+  icon: {
+    width: 24,
+    height: 24,
+  },
   caption: {
     fontFamily: FONT.regular,
     fontSize: SIZES.small,
-    color: COLORS.text
+    color: COLORS.textHint
+  },
+  captionAccent: {
+    fontFamily: FONT.medium ,
+    fontSize: SIZES.small,
+    color: COLORS.primary
   },
   container: {
     display: "flex",
     position: "absolute",
     bottom: 20,
-    left: 12,
-    right: 12,
+    left: 16,
+    right: 16,
     padding: SIZES.small,
     backgroundColor: "#FFF",
     justifyContent: "space-between",

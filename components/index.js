@@ -6,6 +6,13 @@ import Welcome from "./home/welcome/Welcome";
 import Nearbyjobs from "./home/nearby/Nearbyjobs";
 import Popularjobs from "./home/popular/Popularjobs";
 
+//medicine screen
+import Slot from "./medicine/slot/medicineSlot";
+import List from "./medicine/list/medicineList"
+
+// reminder screen
+import Reminder from "./reminder/reminder"
+
 // job details screen
 import Company from "./jobdetails/company/Company";
 import { default as JobTabs } from "./jobdetails/tabs/Tabs";
@@ -27,5 +34,8 @@ export {
   JobFooter,
   Specifics,
   NearbyJobCard,
-  BottomNavigator
+  BottomNavigator,
+  Slot,
+  List,
+  Reminder
 };
