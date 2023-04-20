@@ -4,9 +4,9 @@ import { icons } from '../../../constants'
 
 import styles from './medicineSlot.style'
 
-const Slot = () => {
-    const slot1 = 0
-    const slot2 = 1
+const Slot = ({slot1}, {slot2}) => {
+    // const slot1 = 0
+    // const slot2 = 1
     const slot3 = 1
     const slot4 = 0
     const slot5 = 0
