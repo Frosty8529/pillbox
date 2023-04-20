@@ -16,6 +16,7 @@ const Reminder = ({ item }) => {
         <View style={styles.details}>
           <Text style={styles.title} >{item.title}</Text>
           <Text style={styles.time}>{item.time}</Text>
+          <View></View>
         </View>
 
         <Switch

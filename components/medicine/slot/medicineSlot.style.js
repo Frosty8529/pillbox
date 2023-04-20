@@ -4,9 +4,10 @@ import { COLORS, FONT, SIZES } from "../../../constants";
 
 const styles = StyleSheet.create({
   container: {
-    gap: 8
+    gap: 8,
   },
   slotContainer: {
+    display: "flex",
     borderRadius: SIZES.xxs,
     borderColor: COLORS.primary,
     borderWidth: 1,
@@ -14,7 +15,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     gap: 8,
     display: "flex",
-    alignItems: "flex-start"
+    alignItems: "flex-start",
+    justifyContent: "space-between"
   },
   headText: {
     fontSize: SIZES.large,
@@ -31,7 +33,14 @@ const styles = StyleSheet.create({
     marginVertical: SIZES.small / 1.25,
   },
   slotText: {
+    fontSize: SIZES.medium,
+    color: COLORS.text,
+    fontFamily: FONT.medium,
+    height: 45
+  },
+  caption: {
     fontSize: SIZES.small,
+    fontFamily: FONT.medium,
     color: COLORS.text
   },
   slot1: {
@@ -40,7 +49,8 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.opaprimary,
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: 12
+    borderRadius: 12,
+    paddingVertical: 12
   },
   slot2: {
     height: 120,
@@ -48,7 +58,8 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.slot2,
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: 12
+    borderRadius: 12,
+    flexDirection: "column"
   },
   slot3: {
     height: 120,
@@ -73,6 +84,16 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 12
+  },
+  icon: {
+    width: 24,
+    height: 24
+  },
+  pillCheck: {
+    flexDirection: "column",
+    alignItems: "center",
+    padding: 0,
+    gap: 4
   }
 });
 

@@ -20,6 +20,10 @@ import reminderAccent from '../assets/icons/reminderAccent.png'
 import plus from '../assets/icons/plus.png'
 import edit from '../assets/icons/edit.png'
 import editAccent from '../assets/icons/editAccent.png'
+import checkMark from '../assets/icons/checkCircle.png'
+import checkMarkSuccess from '../assets/icons/checkCircleSuccess.png'
+import xMark from '../assets/icons/xCircle.png'
+import xMarkRed from '../assets/icons/xCircleRed.png'
 
 export default {
   heart,
@@ -43,5 +47,9 @@ export default {
   reminderAccent,
   plus,
   edit,
-  editAccent
+  editAccent,
+  checkMark,
+  checkMarkSuccess,
+  xMark,
+  xMarkRed
 };
