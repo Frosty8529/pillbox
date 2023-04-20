@@ -11,6 +11,15 @@ import chevronRight from '../assets/icons/chevron-right.png'
 import notification from '../assets/icons/notification.png'
 import chevronDown from '../assets/icons/chevron-down.png'
 import clock from '../assets/icons/clock.png'
+import home from '../assets/icons/home.png'
+import homeAccent from '../assets/icons/homeAccent.png'
+import pill from '../assets/icons/pill.png'
+import pillAccent from '../assets/icons/pillAccent.png'
+import reminder from '../assets/icons/reminder.png'
+import reminderAccent from '../assets/icons/reminderAccent.png'
+import plus from '../assets/icons/plus.png'
+import edit from '../assets/icons/edit.png'
+import editAccent from '../assets/icons/editAccent.png'
 
 export default {
   heart,
@@ -25,5 +34,14 @@ export default {
   chevronRight,
   notification,
   chevronDown,
-  clock
+  clock, 
+  home,
+  homeAccent,
+  pill,
+  pillAccent,
+  reminder,
+  reminderAccent,
+  plus,
+  edit,
+  editAccent
 };

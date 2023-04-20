@@ -13,6 +13,11 @@ const COLORS = {
 
   white: "#F3F4F8",
   lightWhite: "#FAFAFC",
+
+  slot2: "#FDCABF",
+  slot3: "#A8E2D1",
+  slot4: "#C6D0F9",
+  slot5: "#F0E9A7"
 };
 
 const FONT = {
@@ -22,6 +27,7 @@ const FONT = {
 };
 
 const SIZES = {
+  xxs: 8,
   xSmall: 10,
   small: 12,
   medium: 16,

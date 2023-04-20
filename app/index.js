@@ -5,6 +5,7 @@ import { Stack, useRouter } from 'expo-router';
 import { COLORS, icons, images,  SIZES } from '../constants';
 import { Nearbyjobs, Popularjobs, ScreenHeaderBtn, Welcome, BottomNavigator } from '../components'
 import { BorderlessButton } from 'react-native-gesture-handler';
+import styles from '../components/common/bottomnav/bottomnav.style'
 
 const Home = () => {
     const router = useRouter();
@@ -36,10 +37,10 @@ const Home = () => {
             </ScrollView>
 
             <BottomNavigator 
-                iconUrlR={icons.notification} textR="Home"
-                iconUrlM={icons.notification} textM="Medicine"
-                iconUrlL={icons.notification} textL="Reminder"
-                dimension="60%" />
+                icon1={icons.homeAccent} style1={styles.captionAccent}
+                icon2={icons.pill} style2={styles.caption}
+                icon3={icons.reminder} style3={styles.caption}
+            />
         </SafeAreaView>
     )
 }

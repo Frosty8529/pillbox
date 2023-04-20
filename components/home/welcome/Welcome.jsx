@@ -14,6 +14,12 @@ import { icons, SIZES } from '../../../constants'
 
 const date = [{ num: "23", day: "Thu" }, { num: "24", day: "Fri" }, { num: "25", day: "Sat" }, { num: "26", day: "Sun" }, { num: "27", day: "Mon" }, { num: "28", day: "Tue" }, { num: "29", day: "Wed" }]
 
+const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+
+const d = new Date();
+let dayy = days[d.getDay()]
+const dayyy = new Date(d).setDate(18)
+
 const tdMonth = new Date().toLocaleString("en-US", { month: "long" })
 const tdDate = new Date().toLocaleString("en-US", { day : '2-digit'})
 const tdYear = new Date().getFullYear()
