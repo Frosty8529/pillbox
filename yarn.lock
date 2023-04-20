@@ -10787,6 +10787,11 @@ react-native-screens@*, "react-native-screens@>= 3.0.0", react-native-screens@~3
     react-freeze "^1.0.0"
     warn-once "^0.1.0"
 
+react-native-sqlite-storage@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.npmjs.org/react-native-sqlite-storage/-/react-native-sqlite-storage-6.0.1.tgz"
+  integrity sha512-1tDFjrint6X6qSYKf3gDyz+XB+X79jfiL6xTugKHPRtF0WvqMtVgdLuNqZunIXjNEvNtNVEbXaeZ6MsguFu00A==
+
 react-native-web@~0.18.7:
   version "0.18.12"
   resolved "https://registry.npmjs.org/react-native-web/-/react-native-web-0.18.12.tgz"
@@ -10800,7 +10805,7 @@ react-native-web@~0.18.7:
     postcss-value-parser "^4.2.0"
     styleq "^0.1.2"
 
-react-native@*, react-native@0.71.6:
+react-native@*, react-native@>=0.14.0, react-native@0.71.6:
   version "0.71.6"
   resolved "https://registry.npmjs.org/react-native/-/react-native-0.71.6.tgz"
   integrity sha512-gHrDj7qaAaiE41JwaFCh3AtvOqOLuRgZtHKzNiwxakG/wvPAYmG73ECfWHGxjxIx/QT17Hp37Da3ipCei/CayQ==
