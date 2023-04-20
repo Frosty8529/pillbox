@@ -1,15 +1,19 @@
 import React from 'react'
+import { render } from 'react-dom'
 import { View, Text, Image } from 'react-native'
 import { icons } from '../../../constants'
+import ReactDOM from 'react-dom';
 
 import styles from './medicineSlot.style'
 
-const Slot = ({slot1}, {slot2}) => {
+const Slot = (props) => {
     // const slot1 = 0
-    // const slot2 = 1
+    const slot2 = 1
     const slot3 = 1
     const slot4 = 0
     const slot5 = 0
+
+    console.log(props.slot1);
 
     return (
         <View style={styles.container}>
@@ -19,11 +23,11 @@ const Slot = ({slot1}, {slot2}) => {
                     <Text style={styles.slotText}>Slot 1</Text>
                     <View style={styles.pillCheck}>
                         <Image
-                            source={slot1 === 0 ? icons.xMarkRed:icons.checkMarkSuccess}
+                            source={props.x === 0 ? icons.xMarkRed:icons.checkMarkSuccess}
                             resizeMode="contain"
                             style={styles.icon}
                         />
-                        <Text style={styles.caption}>{slot1 === 0 ? "Empty":"Available"}</Text>
+                        <Text style={styles.caption}>{props.x === 0 ? "Empty":"Available"}</Text>
                     </View>
                 </View>
                 <View style={styles.slot2}>

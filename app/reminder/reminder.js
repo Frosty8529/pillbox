@@ -13,13 +13,13 @@ const reminder = () => {
     const reminder = [
         {
             title: "Before breakfast",
-            day: ["Mon", "Tue"],
+            days: ["Mon", "Tue"],
             time: "09:30",
             slot: ["1", "2", "3"]
         },
         {
             title: "Afer breakfast",
-            day: ["Mon"],
+            days: ["Mon"],
             time: "09:30",
             slot: ["1"]
         },
@@ -31,10 +31,15 @@ const reminder = () => {
                 options={{
                     headerStyle: { backgroundColor: COLORS.lightWhite },
                     headerLeft: () => (
-                        <ScreenHeaderBtn iconUrl={icons.editAccent} dimension="60%" />
+                        <ScreenHeaderBtn
+                            iconUrl={icons.editAccent}
+                            dimension="60%" />
                     ),
                     headerRight: () => (
-                        <ScreenHeaderBtn iconUrl={icons.plus} dimension="60%" />
+                        <ScreenHeaderBtn
+                            iconUrl={icons.plus}
+                            dimension="60%"
+                            handlePress={() => router.push(`/reminder/addReminder`)} />
                     ),
                     headerTitle: "Reminder"
                 }}

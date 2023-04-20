@@ -54,6 +54,11 @@ const styles = StyleSheet.create({
   },
   captionDetails: {
     flexDirection: "row"
+  },
+  days: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: 4
   }
 });
 

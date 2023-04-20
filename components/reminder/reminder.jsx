@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { View, Text, Pressable, Switch } from 'react-native'
 import { COLORS } from '../../constants'
 
@@ -16,7 +16,15 @@ const Reminder = ({ item }) => {
         <View style={styles.details}>
           <Text style={styles.title} >{item.title}</Text>
           <Text style={styles.time}>{item.time}</Text>
-          <View></View>
+          <View style={styles.days}>
+            {item.days.map((value, index) => (
+              <Text style={styles.caption}>{value}</Text>
+            ))}
+            <Text style={styles.caption}>| Slot</Text>
+            {item.slot.map((value, index) => (
+              <Text style={styles.caption}>{value}</Text>
+            ))}
+          </View>
         </View>
 
         <Switch
