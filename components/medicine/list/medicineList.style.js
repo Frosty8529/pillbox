@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     gap: 8,
     backgroundColor: COLORS.opaprimary,
     borderRadius: 12,
-    marginBottom: 16
+    marginBottom: 12
   },
   image: {
     width: 60,
