@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, ScrollView, SafeAreaView, ActivityIndicator, RefreshControl} from 'react-native'
+import { Text, View, ScrollView, SafeAreaView, ActivityIndicator, RefreshControl, Image} from 'react-native'
 import { Stack, useRouter } from 'expo-router';
 
 import { COLORS, icons, images,  SIZES } from '../../constants'
@@ -9,6 +9,27 @@ import styles from '../../components/common/bottomnav/bottomnav.style';
 
 const medicine = () => {
     const router = useRouter();
+
+    const medicine = [
+        {
+          id: "1",
+          name: "Tylenol",
+          displayName: "Headache",
+          pill: "30",
+          slot: "1",
+          status: "",
+          image: "https://images.albertsons-media.com/is/image/ABS/960242448-A1C1?$ng-ecom-pdp-mobile$&defaultImage=Not_Available"
+        },
+        {
+          id: "2",
+          name: "Zyrtec",
+          displayName: "Allergy",
+          pill: "12",
+          slot: "2",
+          status: "",
+          image: "https://inwfile.com/s-cl/tmkmdi.jpg"
+        }
+      ]
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
@@ -24,15 +45,25 @@ const medicine = () => {
                 headerTitle: "Medicine"
                 }}
             />
-
+            <View
+            style={{
+                // flex: 1,
+                paddingTop: SIZES.medium,
+                paddingRight: SIZES.medium,
+                paddingLeft: SIZES.medium
+            }}>
+                <Slot />
+            </View>
+             
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View
                 style={{
                     flex: 1,
                     padding: SIZES.medium
                 }}>
-                    <Slot />
-                    <List />
+                    {medicine.map((item, index) => (
+                        <List item={item} key={index} />
+                    ))}
                 </View>
             </ScrollView>
 
