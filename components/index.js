@@ -3,7 +3,6 @@ import BottomNavigator from "./common/bottomnav/bottomnav"
 
 // home screen
 import Welcome from "./home/welcome/Welcome";
-import Nearbyjobs from "./home/nearby/Nearbyjobs";
 import Popularjobs from "./home/popular/Popularjobs";
 
 //medicine screen
@@ -26,7 +25,6 @@ import NearbyJobCard from "./common/cards/nearby/NearbyJobCard";
 export {
   ScreenHeaderBtn,
   Welcome,
-  Nearbyjobs,
   Popularjobs,
   Company,
   JobTabs,
