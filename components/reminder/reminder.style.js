@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
     flex: 1,
     borderColor: COLORS.outline,
     borderWidth: 1,
+    backgroundColor: COLORS.white,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 4,
@@ -100,12 +101,12 @@ const styles = StyleSheet.create({
     color: COLORS.text,
     fontFamily: FONT.regular
   },
-  dateLabel: (activeDate, item) => ({
+  dateLabel: (item) => ({
     fontFamily: FONT.regular,
     fontSize: SIZES.medium,
-    color: activeDate === item ? COLORS.primary : COLORS.text
+    color: item ? COLORS.primary : COLORS.textHint
   }),
-  dateContainer: (activeDate, item) => ({
+  dateContainer: (item) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -114,8 +115,8 @@ const styles = StyleSheet.create({
     height: 40,
     width: 60,
     borderWidth: 1,
-    borderColor: activeDate === item ? COLORS.primary : COLORS.opaprimary,
-    backgroundColor: activeDate === item ? COLORS.opaprimary : COLORS.white,
+    borderColor: (item) ? COLORS.primary : COLORS.opaprimary,
+    backgroundColor: (item) ? COLORS.opaprimary : COLORS.white,
     borderRadius: SIZES.small
   })
 });

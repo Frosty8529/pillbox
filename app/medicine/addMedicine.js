@@ -96,7 +96,7 @@ const addMedicine = () => {
                             placeholder='Select slot'
                             arrowicon={<Image source={icons.chevronDownHint} style={{ width: 24, height: 24 }} />}
                             search={false}
-                            boxStyles={{ borderRadius: 4, borderColor: COLORS.outline, paddingHorizontal: 10, height: 44, width: 361, justifyContent: 'space-between', alignItems: 'center' }} 
+                            boxStyles={{ borderRadius: 4, borderColor: COLORS.outline, backgroundColor: COLORS.white, paddingHorizontal: 10, height: 44, width: 361, justifyContent: 'space-between', alignItems: 'center' }} 
                             dropdownStyles={{ borderRadius: 8, borderColor: COLORS.outline, gap: 10 }}
                         />
                     </View>

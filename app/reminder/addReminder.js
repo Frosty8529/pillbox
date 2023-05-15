@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Text, View, ScrollView, SafeAreaView, ActivityIndicator, RefreshControl, TextInput, FlatList, Pressable } from 'react-native'
 import { Stack, useRouter } from 'expo-router';
+import InputSpinner from "react-native-input-spinner";
 
 import { COLORS, FONT, icons, images, SIZES } from '../../constants'
 import { Reminder, ScreenHeaderBtn, List, BottomNavigator, Footer } from '../../components'
@@ -9,9 +10,32 @@ import DatePicker from 'react-native-date-picker';
 import styles from '../../components/reminder/reminder.style';
 
 const addReminder = () => {
-    const router = useRouter()
+    const router = useRouter();
 
-    const [activeDate, setactiveDate] = useState([false, false, false, false, false, false, false]);
+   const value = 1
+
+    const dates = [
+        { value: 'Sun', selected: false },
+        { value: 'Mon', selected: false },
+        { value: 'Tue', selected: false },
+        { value: 'Wed', selected: false },
+        { value: 'Thu', selected: false },
+        { value: 'Fri', selected: false },
+        { value: 'Sat', selected: false }];
+
+    const [select, setSelect] = useState(dates);
+    console.log("selectitem", select)
+    const selectDate = (item) => {
+        const newItem = select.map((val) => {
+            if (val.value === item.value) {
+                return { ...val, selected: !val.selected }
+            }
+            else {
+                return val;
+            }
+        })
+        setSelect(newItem)
+    }
 
     const addZeroToDigits = (digit) => {
         if (digit) {
@@ -22,18 +46,6 @@ const addReminder = () => {
         }
 
     }
-
-    // const date = [
-    //     { value: 'Sun', index: 0 },
-    //     { value: 'Mon', index: 1 },
-    //     { value: 'Tue', index: 2 },
-    //     { value: 'Wed', index: 3 },
-    //     { value: 'Thu', index: 4 },
-    //     { value: 'Fri', index: 5 },
-    //     { value: 'Sat', index: 6 }
-    // ]
-
-    const date = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
     const dataSet = {
         data: {
@@ -113,16 +125,28 @@ const addReminder = () => {
                 <View style={styles.textInputContainer}>
                     <Text style={styles.inputLabel}>Repeat</Text>
                     <FlatList
-                        data={date}
+                        data={select}
                         contentContainerStyle={{ columnGap: SIZES.small }}
                         horizontal
                         renderItem={({ item }) => (
                             <Pressable
-                                style={styles.dateContainer(activeDate, item)}
-                                onPress={() => setactiveDate(item)}>
-                                <Text style={styles.dateLabel(activeDate, item)}>{item}</Text>
+                                style={styles.dateContainer(item.selected)}
+                                onPress={() => selectDate(item)}>
+                                <Text style={styles.dateLabel(item.selected)}>{item.value}</Text>
                             </Pressable>
                         )}
+                    />
+                </View>
+
+                <View style={styles.col}>
+                    <Text style={styles.text}>onChange</Text>
+                    <InputSpinner
+                        value={this.state.value}
+                        style={styles.spinner}
+                        max={10}
+                        onChange={(num) => {
+                            alert("onChange new value: " + num);
+                        }}
                     />
                 </View>
 

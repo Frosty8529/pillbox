@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
     flex: 1,
     borderColor: COLORS.outline,
     borderWidth: 1,
+    backgroundColor: COLORS.white,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 4,
@@ -116,7 +117,8 @@ const styles = StyleSheet.create({
     height: 40,
     borderRadius: 4,
     borderColor: COLORS.outline,
-    borderWidth: 1
+    borderWidth: 1,
+    backgroundColor: COLORS.white
   },
   stepperWrapper: {
     flex: 1,
@@ -138,7 +140,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     height: 40,
     borderColor: COLORS.outline
-  }
+  },
+  spinner: {
+		flex: 1,
+		marginRight: 10,
+		minWidth: 150,
+	},
 });
 
 export default styles;

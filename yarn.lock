@@ -8484,6 +8484,13 @@ react-native-gradle-plugin@^0.71.15:
   resolved "https://registry.yarnpkg.com/react-native-gradle-plugin/-/react-native-gradle-plugin-0.71.18.tgz#20ef199bc85be32e45bb6cc069ec2e7dcb1a74a6"
   integrity sha512-7F6bD7B8Xsn3JllxcwHhFcsl9aHIig47+3eN4IHFNqfLhZr++3ElDrcqfMzugM+niWbaMi7bJ0kAkAL8eCpdWg==
 
+react-native-input-spinner@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/react-native-input-spinner/-/react-native-input-spinner-1.8.1.tgz#1802327a249192c560f58c65a1a857eeef1330c0"
+  integrity sha512-zgqL4HcYG5vYkpHh4ismLb7g6q/EmZjKnp4Mux0KNyvs1QpkTJ4pJGE6EgjO/JgVuIMIMbch9KLQkIYZ6BmwRQ==
+  dependencies:
+    prop-types "^15.7.2"
+
 react-native-paho-mqtt@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/react-native-paho-mqtt/-/react-native-paho-mqtt-0.1.1.tgz#181d5d9fcbee3c25e560e4aa3aeba5b0df3910e8"
