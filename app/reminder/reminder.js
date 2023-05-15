@@ -37,7 +37,7 @@ const reminder = () => {
                     ),
                     headerRight: () => (
                         <ScreenHeaderBtn
-                            iconUrl={icons.plus}
+                            iconUrl={icons.plusAccent}
                             dimension="60%"
                             handlePress={() => router.push(`/reminder/addReminder`)} />
                     ),

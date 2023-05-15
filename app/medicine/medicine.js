@@ -10,10 +10,6 @@ import styles from '../../components/common/bottomnav/bottomnav.style';
 import { Client, Message } from 'react-native-paho-mqtt';
 
 x = 1
-y = 1
-z = 1
-a = 1
-b = 0
 
 //Set up an in-memory alternative to global localStorage
 const myStorage = {
@@ -97,7 +93,7 @@ const medicine = () => {
                     ),
                     headerRight: () => (
                         <ScreenHeaderBtn
-                            iconUrl={icons.plus}
+                            iconUrl={icons.plusAccent}
                             dimension="60%" 
                             handlePress={() => router.push(`/medicine/addMedicine`)}/>
                     ),

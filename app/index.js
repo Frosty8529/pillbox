@@ -3,7 +3,7 @@ import { View, ScrollView, SafeAreaView } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
 
 import { COLORS, icons, images,  SIZES } from '../constants';
-import { Nearbyjobs, Popularjobs, ScreenHeaderBtn, Welcome, BottomNavigator } from '../components'
+import { Popularjobs, ScreenHeaderBtn, Welcome, BottomNavigator } from '../components'
 import { BorderlessButton } from 'react-native-gesture-handler';
 import styles from '../components/common/bottomnav/bottomnav.style'
 

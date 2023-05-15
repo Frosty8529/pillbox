@@ -4,13 +4,11 @@ import { COLORS, FONT, SIZES } from "../../../constants";
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: SIZES.medium,
-    borderRadius: SIZES.medium,
-    borderWidth: 1,
     height: "100%",
     display: "flex",
-    alignItems: "center",
-    justifyContent: "center"
+    alignItems: "flex-start",
+    padding: SIZES.medium,
+    gap: SIZES.medium
   },
   list: {
     gap: SIZES.medium
@@ -33,6 +31,11 @@ const styles = StyleSheet.create({
     fontSize: SIZES.medium,
     color: COLORS.text,
     fontFamily: FONT.medium
+  },
+  inputLabel: {
+    fontSize: SIZES.medium,
+    color: COLORS.text,
+    fontFamily: FONT.regular
   },
   captionHint: {
     fontFamily: FONT.regular,
@@ -69,6 +72,72 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     gap: 4,
     width: 200
+  },
+  searchContainer: {   
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+    height: 40,
+  },
+  searchWrapper: {
+    flex: 1,
+    borderColor: COLORS.outline,
+    borderWidth: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 4,
+    height: "100%"
+  },
+  searchInput: {
+    fontFamily: FONT.regular,
+    fontSize: SIZES.sm,
+    width: "100%",
+    height: "100%",
+    paddingHorizontal: 10
+  },
+  textInputContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    gap: 4
+  },
+  stepperLeft: {
+    borderRightColor: COLORS.outline,
+    borderRightWidth: 1
+  },
+  stepperRight: {
+    borderLeftColor: COLORS.outline,
+    borderLeftWidth: 1
+  },
+  stepperContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    height: 40,
+    borderRadius: 4,
+    borderColor: COLORS.outline,
+    borderWidth: 1
+  },
+  stepperWrapper: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100%"
+  },
+  stepperInput: {
+    display: 'flex',
+    fontFamily: FONT.regular,
+    fontSize: SIZES.sm,
+    width: "100%",
+    height: "100%",
+    paddingHorizontal: 10,
+    textAlign: 'center'
+  },
+  dropdown: {
+    display: 'flex',
+    flexDirection: 'row',
+    height: 40,
+    borderColor: COLORS.outline
   }
 });
 

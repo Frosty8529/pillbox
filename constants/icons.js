@@ -10,6 +10,7 @@ import chevronLeft from '../assets/icons/chevron-left.png'
 import chevronRight from '../assets/icons/chevron-right.png'
 import notification from '../assets/icons/notification.png'
 import chevronDown from '../assets/icons/chevron-down.png'
+import chevronDownHint from '../assets/icons/chevronDownHint.png'
 import clock from '../assets/icons/clock.png'
 import home from '../assets/icons/home.png'
 import homeAccent from '../assets/icons/homeAccent.png'
@@ -18,6 +19,8 @@ import pillAccent from '../assets/icons/pillAccent.png'
 import reminder from '../assets/icons/reminder.png'
 import reminderAccent from '../assets/icons/reminderAccent.png'
 import plus from '../assets/icons/plus.png'
+import plusAccent from '../assets/icons/plusAccent.png'
+import minus from '../assets/icons/minus.png'
 import edit from '../assets/icons/edit.png'
 import editAccent from '../assets/icons/editAccent.png'
 import checkMark from '../assets/icons/checkCircle.png'
@@ -38,6 +41,7 @@ export default {
   chevronRight,
   notification,
   chevronDown,
+  chevronDownHint,
   clock, 
   home,
   homeAccent,
@@ -46,6 +50,8 @@ export default {
   reminder,
   reminderAccent,
   plus,
+  plusAccent,
+  minus,
   edit,
   editAccent,
   checkMark,

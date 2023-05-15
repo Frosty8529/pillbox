@@ -7,11 +7,12 @@ const COLORS = {
   text: "#000000",
   textAccent: "#ffffff",
   textHint: "#8C8C8C",
+  outline: "#EBF0F3",
 
   gray: "#83829A",
   gray2: "#C1C0C8",
 
-  white: "#F3F4F8",
+  white: "#FFFFFF",
   lightWhite: "#FAFAFC",
 
   slot2: "#FDCABF",
@@ -30,6 +31,7 @@ const SIZES = {
   xxs: 8,
   xSmall: 10,
   small: 12,
+  sm: 14,
   medium: 16,
   large: 20,
   xLarge: 24,
