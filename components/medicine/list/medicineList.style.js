@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   inputLabel: {
     fontSize: SIZES.medium,
     color: COLORS.text,
-    fontFamily: FONT.regular
+    fontFamily: FONT.medium
   },
   captionHint: {
     fontFamily: FONT.regular,
@@ -142,9 +142,7 @@ const styles = StyleSheet.create({
     borderColor: COLORS.outline
   },
   spinner: {
-		flex: 1,
-		marginRight: 10,
-		minWidth: 150,
+    width: "100%"
 	},
 });
 

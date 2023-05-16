@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     padding: SIZES.medium,
     gap: SIZES.medium,
   },
-  searchContainer: {   
+  searchContainer: {
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "row",
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
   inputLabel: {
     fontSize: SIZES.medium,
     color: COLORS.text,
-    fontFamily: FONT.regular
+    fontFamily: FONT.medium
   },
   dateLabel: (item) => ({
     fontFamily: FONT.regular,
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: SIZES.small, 
+    paddingHorizontal: SIZES.small,
     paddingVertical: SIZES.xSmall,
     height: 40,
     width: 60,
@@ -118,7 +118,43 @@ const styles = StyleSheet.create({
     borderColor: (item) ? COLORS.primary : COLORS.opaprimary,
     backgroundColor: (item) ? COLORS.opaprimary : COLORS.white,
     borderRadius: SIZES.small
-  })
+  }),
+  spinner: {
+    width: 132,
+  },
+  slotStepper: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
+  stepperWrapper: {
+    flex: 1,
+    flexDirection: 'row',
+  },
+  stepperContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+    height: 300,
+    gap: 4,
+  },
+  repeatContainer: {
+    height: 44,
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+  },
+  medicineContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    gap: 4
+  },
+  slotLabel: {
+    fontFamily: FONT.regular,
+    color: COLORS.text,
+    fontSize: SIZES.medium
+  }
 });
 
 export default styles;
