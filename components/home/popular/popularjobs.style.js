@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     padding: 8,
     gap: 12,
     backgroundColor: COLORS.opaprimary,
-    borderRadius: 24,
+    borderRadius: 12,
     width: "100%"
   },
   drugTextContainer: {
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     padding: 0,
     gap: 8,
     width: "100%"
-  }
+  },
 });
 
 export default styles;

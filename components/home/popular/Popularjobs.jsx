@@ -4,7 +4,6 @@ import { useRouter } from 'expo-router'
 
 import styles from './popularjobs.style'
 import { COLORS, SIZES, icons, images } from '../../../constants'
-import PopularJobCard from '../../common/cards/popular/PopularJobCard'
 
 const Popularjobs = () => {
   const router = useRouter();
@@ -32,7 +31,7 @@ const Popularjobs = () => {
           <Image 
             source={images.pills} 
             resizeMode = "cover"  
-            style={{ width: 60, height: 60, borderRadius: 20 }}
+            style={{ width: 60, height: 60, borderRadius: 8 }}
           />
           <View style={styles.drugTextContainer}>
             <Text style={styles.labelBold}>Tylenol</Text>
@@ -57,7 +56,7 @@ const Popularjobs = () => {
           <Image 
             source={images.pills} 
             resizeMode = "cover"  
-            style={{ width: 60, height: 60, borderRadius: 20 }}
+            style={{ width: 60, height: 60, borderRadius: 8 }}
           />
           <View style={styles.drugTextContainer}>
             <Text style={styles.labelBold}>Tylenol</Text>
@@ -94,7 +93,7 @@ const Popularjobs = () => {
           <Image 
             source={images.pills} 
             resizeMode = "cover"  
-            style={{ width: 60, height: 60, borderRadius: 20 }}
+            style={{ width: 60, height: 60, borderRadius: 8 }}
           />
           <View style={styles.drugTextContainer}>
             <Text style={styles.labelBold}>Tylenol</Text>
@@ -106,7 +105,7 @@ const Popularjobs = () => {
           <Image 
             source={images.pills} 
             resizeMode = "cover"  
-            style={{ width: 60, height: 60, borderRadius: 20 }}
+            style={{ width: 60, height: 60, borderRadius: 8 }}
           />
           <View style={styles.drugTextContainer}>
             <Text style={styles.labelBold}>Tylenol</Text>

@@ -29,14 +29,15 @@ const styles = StyleSheet.create({
   container: {
     display: "flex",
     position: "absolute",
-    bottom: 20,
-    left: 16,
-    right: 16,
-    padding: SIZES.small,
+    bottom: 0,
+    paddingHorizontal: SIZES.large,
+    paddingBottom: SIZES.large,
     backgroundColor: "#FFF",
     justifyContent: "space-between",
     alignItems: "center",
     flexDirection: "row",
+    width: "100%",
+    height: 80
   },
   likeBtn: {
     width: 55,

@@ -8,13 +8,13 @@ import styles from './bottomnav.style'
 
 const Tab = createBottomTabNavigator();
 
-const bottomNav = ({icon1, icon2, icon3, style1, style2, style3, handlePress }) => {
+const bottomNav = ({icon1, icon2, icon3, style1, style2, style3 }) => {
   const router = useRouter();
   return (
     <View style={styles.container}>
       <TouchableOpacity 
         style={styles.btnContainer} 
-        onPress={() => router.push(`/home/index`)}>
+        onPress={() => router.push(`/`)}>
         <Image 
           source={icon1} 
           resizeMode = "contain"
