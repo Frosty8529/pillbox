@@ -14,7 +14,7 @@ const Footer = ({handlePress}) => {
     <View style={styles.container}>
       <TouchableOpacity 
       style={styles.saveBtn}
-      onpress={handlePress}>
+      onPress={handlePress}>
         <Text style={styles.btnText}>Save</Text>
       </TouchableOpacity>
     </View>

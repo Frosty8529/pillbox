@@ -9,8 +9,34 @@ import RNDateTimeSelector from "react-native-date-time-scroll-picker";
 import DatePicker from 'react-native-date-picker';
 import styles from '../../components/reminder/reminder.style';
 
+import { ref, set } from "firebase/database";
+import db from "../../components/config";
+
+import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
+
 const addReminder = () => {
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyDTpEX1pSNYD4Hsge_3zStqqkgowIaNEpM",
+        authDomain: "pillbox-58c1f.firebaseapp.com",
+        databaseURL: "https://pillbox-58c1f-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "pillbox-58c1f",
+        storageBucket: "pillbox-58c1f.appspot.com",
+        messagingSenderId: "736164580415",
+        appId: "1:736164580415:web:f92170d49fdbb7a921bc8a",
+        measurementId: "G-1VKW54HW7W"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+
+    const db = getDatabase(app);
+    console.log(db)
+
+
     const router = useRouter();
+    const [title, setTitle] = useState('');
     const value = 1
     const medicines = [
         { slot: '1', name: 'aaaaa' },
@@ -34,7 +60,7 @@ const addReminder = () => {
         { value: 'Sat', selected: false }];
 
     const [select, setSelect] = useState(dates);
-    console.log("selectitem", select)
+    // console.log("selectitem", select)
     const selectDate = (item) => {
         const newItem = select.map((val) => {
             if (val.value === item.value) {
@@ -74,6 +100,18 @@ const addReminder = () => {
     }
     const seperatorComponentRendererTwo = () => {
         return <Text style={{ fontSize: SIZES.xxLarge, lineHeight: 80, fontFamily: FONT.regular }}></Text>
+    }
+
+    function create() {
+        set(ref(db, 'users/' + title), {
+            title: title,
+        }).then(() => {
+            alert('success')
+        }).catch((error) => {
+            alert(error)
+        })
+        setTitle('')
+        console.log('db', db)
     }
 
     return (
@@ -127,7 +165,8 @@ const addReminder = () => {
                             <View style={styles.searchWrapper}>
                                 <TextInput
                                     style={styles.searchInput}
-                                    onChange={() => { }}
+                                    value={title}
+                                    onChangeText={(text) => setTitle(text)}
                                     placeholder='Enter title' />
                             </View>
                         </View>
@@ -183,7 +222,7 @@ const addReminder = () => {
 
                 </View>
             </ScrollView>
-            <Footer />
+            <Footer handlePress={create} />
         </SafeAreaView>
     )
 }
