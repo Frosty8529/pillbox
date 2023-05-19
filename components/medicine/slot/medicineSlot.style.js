@@ -45,8 +45,8 @@ const styles = StyleSheet.create({
   },
   slot1: {
     height: 120,
-    width: 62,
-    backgroundColor: COLORS.opaprimary,
+    flex: 1,
+    backgroundColor: COLORS.slot5,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 12,
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   },
   slot2: {
     height: 120,
-    width: 62,
+    flex: 1,
     backgroundColor: COLORS.slot2,
     justifyContent: "center",
     alignItems: "center",
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   },
   slot3: {
     height: 120,
-    width: 62,
+    flex: 1,
     backgroundColor: COLORS.slot3,
     justifyContent: "center",
     alignItems: "center",
@@ -71,16 +71,8 @@ const styles = StyleSheet.create({
   },
   slot4: {
     height: 120,
-    width: 62,
+    flex: 1,
     backgroundColor: COLORS.slot4,
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 12
-  },
-  slot5: {
-    height: 120,
-    width: 62,
-    backgroundColor: COLORS.slot5,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 12

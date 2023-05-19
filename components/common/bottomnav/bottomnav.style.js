@@ -67,6 +67,16 @@ const styles = StyleSheet.create({
     color: COLORS.white,
     fontFamily: FONT.bold,
   },
+  defaultText: {
+    display: 'flex',
+    flexDirection:'column',
+    alignContent: 'center',
+    justifyContent: 'center',
+    fontSize: SIZES.medium,
+    fontFamily: FONT.medium,
+    color: COLORS.textHint
+  },
+  
 });
 
 export default styles;

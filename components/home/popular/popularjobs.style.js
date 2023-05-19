@@ -4,21 +4,23 @@ import { FONT, SIZES, COLORS } from "../../../constants";
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: SIZES.xLarge,
-    gap: 8
+    marginTop: SIZES.medium,
+    display: 'flex',
+    gap: 24
   },
   cardsContainer: {
     marginTop: SIZES.medium,
   },
   captionHint: {
-    fontSize: SIZES.small,
+    fontSize: SIZES.medium,
     fontFamily: FONT.regular,
     color: COLORS.textHint,
   },
   drugContainer: {
     flexDirection: "row",
     alignItems: "center",
-    padding: 8,
+    paddingHorizontal: 20,
+    paddingVertical: 8,
     gap: 12,
     backgroundColor: COLORS.opaprimary,
     borderRadius: 12,
@@ -58,7 +60,7 @@ const styles = StyleSheet.create({
   },
   labelBold: {
     fontFamily: FONT.bold,
-    fontSize: SIZES.medium,
+    fontSize: SIZES.large,
     color: COLORS.text
   },
   labelicon: {
@@ -84,9 +86,23 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "flex-start",
     padding: 0,
-    gap: 8,
+    gap: 12,
     width: "100%"
   },
+  boxContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    flex: 1,
+    backgroundColor: COLORS.opaprimary,
+    borderRadius: 12,
+    height: 'auto',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    paddingHorizontal: 12,
+    paddingVertical: 12,
+    gap: 4
+
+  }
 });
 
 export default styles;

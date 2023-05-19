@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
   },    
   container: {
     width: "100%",
+    gap: 12
   },
   dateBlock: {
     flexDirection: "column",
@@ -127,6 +128,39 @@ const styles = StyleSheet.create({
     fontFamily: FONT.medium,
     color: activeJobType === item ? COLORS.secondary : COLORS.gray2,
   }),
+  dateContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    flex: 1,
+    borderRadius: 32,
+    backgroundColor: COLORS.opaprimary,
+    borderColor: COLORS.primary,
+    borderWidth: 2,
+    height: 80,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 12
+  },
+  dateText: {
+    fontFamily: FONT.medium,
+    fontSize: SIZES.large
+  },
+  iconDate: {
+    display: 'flex',
+    flexDirection: 'row',
+    gap: 12,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  icon: {
+    height: 44.44,
+    width: 40
+  },
+  header: {
+    fontFamily: FONT.medium,
+    fontSize: SIZES.large,
+    color: COLORS.text
+  },
 });
 
 export default styles;

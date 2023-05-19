@@ -1,13 +1,13 @@
 import React from 'react'
-import { 
-  View, 
+import {
+  View,
   Text,
   TextInput,
   TouchableOpacity,
   Image,
   FlatList
- } from 'react-native'
- import { useRouter } from 'expo-router'
+} from 'react-native'
+import { useRouter } from 'expo-router'
 
 import styles from './welcome.style'
 import { icons, SIZES } from '../../../constants'
@@ -17,11 +17,11 @@ const date = [{ num: "23", day: "Thu" }, { num: "24", day: "Fri" }, { num: "25",
 const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 
 const d = new Date();
-let dayy = days[d.getDay()]
-const dayyy = new Date(d).setDate(18)
+const dayy = days[d.getDay()]
+// const dayyy = new Date(d).setDate(18)
 
 const tdMonth = new Date().toLocaleString("en-US", { month: "long" })
-const tdDate = new Date().toLocaleString("en-US", { day : '2-digit'})
+const tdDate = new Date().toLocaleString("en-US", { day: '2-digit' })
 const tdYear = new Date().getFullYear()
 
 const Welcome = () => {
@@ -29,7 +29,7 @@ const Welcome = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.headericon}>
+      {/* <View style={styles.headericon}>
         <Text style={styles.header}>{tdMonth} {tdYear}</Text>
         <TouchableOpacity style={styles.btnicon}>
           <Image 
@@ -52,7 +52,19 @@ const Welcome = () => {
             </View>
           )}
         />
+      </View> */}
+      <View style={styles.dateContainer}>
+        <View style={styles.iconDate}>
+          <Image
+            source={icons.carlendarAccent}
+            resizeMode="contain"
+            style={styles.icon}
+          />
+          <Text style={styles.dateText}>Today {dayy}, {tdMonth} {tdDate}, {tdYear}</Text>
+        </View>
       </View>
+
+      <Text style={styles.header}>To Take</Text>
 
     </View>
   )

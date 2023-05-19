@@ -33,14 +33,15 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     flexDirection: "row",
     marginBottom: 12,
-    paddingVertical: 8,
-    paddingHorizontal: 12,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    gap: 20,
     alignItems: "center"
   },
   details: {
     flexDirection: "column",
     alignItems: "flex-start",
-    width: "85%"
+    flex: 1
   },
   time: {
     fontSize: SIZES.xLarge,
@@ -154,7 +155,11 @@ const styles = StyleSheet.create({
     fontFamily: FONT.regular,
     color: COLORS.text,
     fontSize: SIZES.medium
-  }
+  },
+  icon: {
+    width: 24,
+    height: 24
+  },
 });
 
 export default styles;

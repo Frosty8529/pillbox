@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     marginVertical: SIZES.small / 1.25,
   },
   label: {
-    fontSize: SIZES.medium,
+    fontSize: SIZES.large,
     color: COLORS.text,
     fontFamily: FONT.medium
   },
@@ -40,21 +40,24 @@ const styles = StyleSheet.create({
   captionHint: {
     fontFamily: FONT.regular,
     color: COLORS.textHint,
-    fontSize: SIZES.small
+    fontSize: SIZES.medium
   },
   captionAccent: {
     fontFamily: FONT.medium,
-    fontSize: SIZES.small,
+    fontSize: SIZES.medium,
     color: COLORS.primary
   },
   medicineList: {
     flexDirection: "row",
     alignItems: "center",
-    padding: 8,
-    gap: 8,
+    justifyContent: 'center',
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    gap: 20,
     backgroundColor: COLORS.opaprimary,
     borderRadius: 12,
-    marginBottom: 12
+    marginBottom: 12,
+    height: 80
   },
   image: {
     width: 60,
@@ -64,14 +67,23 @@ const styles = StyleSheet.create({
   captionLabel: {
     flexDirection: "row",
     alignItems: "flex-start",
-    gap: 4
+    gap: 4,
+    flex: 1
   },
   details: {
+    display: 'flex',
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "flex-start",
-    gap: 4,
-    width: 200
+    gap: 4, 
+    flex: 1
+  },
+  wrapper: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    flex: 1
   },
   searchContainer: {   
     justifyContent: "center",
@@ -144,6 +156,16 @@ const styles = StyleSheet.create({
   spinner: {
     width: "100%"
 	},
+  icon: {
+    width: 24,
+    height: 24
+  },
+  iconWrapper: {
+    display: 'flex',
+    flexDirection:'row',
+    flex: 1,
+    gap: 16
+  }
 });
 
 export default styles;

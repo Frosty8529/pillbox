@@ -27,6 +27,10 @@ import checkMark from '../assets/icons/checkCircle.png'
 import checkMarkSuccess from '../assets/icons/checkCircleSuccess.png'
 import xMark from '../assets/icons/xCircle.png'
 import xMarkRed from '../assets/icons/xCircleRed.png'
+import carlendar from '../assets/icons/calendar.png'
+import carlendarAccent from '../assets/icons/calendarAccent.png'
+import deleteHint from '../assets/icons/delete.png'
+import deleteAccent from '../assets/icons/deleteAccent.png'
 
 export default {
   heart,
@@ -57,5 +61,9 @@ export default {
   checkMark,
   checkMarkSuccess,
   xMark,
-  xMarkRed
+  xMarkRed,
+  carlendar,
+  carlendarAccent,
+  deleteHint,
+  deleteAccent
 };

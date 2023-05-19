@@ -13,10 +13,16 @@ import styles from '../../components/medicine/list/medicineList.style';
 import { getDatabase, ref, set } from "firebase/database"
 import app from "../../components/config"
 
-const addMedicine = () => {
+const editMedicine = (item) => {
+    // const router = useRouter();
+    // const { editMed } = router.params;
+    console.log('edit test', item)
+    // useEffect(() => {
+    //     console.log('edit test', item)
+    // })
+
 
     const db = getDatabase(app);
-    const router = useRouter();
     const settle = 1;
     var pillAmount = '';
     var pillSlot = '';
@@ -40,7 +46,7 @@ const addMedicine = () => {
     ]
 
     const amountPill = (pills) => {
-        // pillAmount = pills
+        pillAmount = pills
         console.log('amount', pillAmount)
         return pillAmount
     }
@@ -48,10 +54,8 @@ const addMedicine = () => {
     const status = false;
 
     const slotPill = (slot) => {
-        // console.log(slot)
         pillSlot = slot.slice(-1)
         // console.log(pillSlot)
-
         return pillSlot
     }
 
@@ -83,7 +87,7 @@ const addMedicine = () => {
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
             <Stack.Screen
                 options={{
-                    headerTitle: "Add medicine"
+                    headerTitle: "Edit medicine"
                 }}
             />
 
@@ -156,4 +160,4 @@ const addMedicine = () => {
     )
 }
 
-export default addMedicine
+export default editMedicine;

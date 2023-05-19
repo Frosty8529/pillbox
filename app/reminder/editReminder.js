@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Text, View, ScrollView, SafeAreaView, ActivityIndicator, RefreshControl, TextInput, FlatList, Pressable, Image } from 'react-native'
 import { Stack, useRouter } from 'expo-router';
 import InputSpinner from "react-native-input-spinner";
@@ -9,62 +9,28 @@ import RNDateTimeSelector from "react-native-date-time-scroll-picker";
 import DatePicker from 'react-native-date-picker';
 import styles from '../../components/reminder/reminder.style';
 
-import { ref, set, onValue } from "firebase/database";
+import { ref, set } from "firebase/database";
 import app from "../../components/config";
 
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 
-const addReminder = () => {
+const editReminder = () => {
 
     const db = getDatabase(app);
-    const [med, setMed] = useState('');
 
-    useEffect(() => {
-        const db = getDatabase(app);
-
-        const starCountRef = ref(db, 'medicine/');
-        onValue(starCountRef, (snapshot) => {
-            const medicineData = snapshot.val();
-            console.log('og', medicineData)
-            if (medicineData !== null) {
-                setMed(medicineData)
-            }
-            // updateStarCount(postElement, data);
-        });
-
-    }, [])
-
-    const medicines = [
-        { slot: '1', name: 'aaaa', pill: '' },
-        { slot: '2', name: 'bbbb', pill: '' },
-        { slot: '3', name: 'cccc', pill: '' },
-        { slot: '4', name: 'dddd', pill: '' },
-    ]
-
-    const medicine = Object.entries(med).map(([key, value]) => ({ key, value }));
-    medicine.map((item) => {
-        if (item.value.slot === 1) {
-            medicines[0].name = item.value.name
-        }
-        if (item.value.slot === 2) {
-            medicines[1].name = item.value.name
-        }
-        if (item.value.slot === 3) {
-            medicines[2].name = item.value.name
-        }
-        if (item.value.slot === 4) {
-            medicines[3].name = item.value.name
-        }
-
-    })
     const router = useRouter();
     const days = [];
     const pills = [];
     const [title, setTitle] = useState('');
     const settle = 0;
-    
-    // const [med, setMed] = useState(medicines)
+    const medicines = [
+        { slot: '1', name: 'aaaaa', pill: '' },
+        { slot: '2', name: 'bbbbb', pill: ''},
+        { slot: '3', name: 'ccccc', pill: ''},
+        { slot: '4', name: 'ddddd', pill: ''},
+    ]
+    const [med, setMed] = useState(medicines)
     const schedule = [
         { id: '', title: '', date: [], slot1: '', slot2: '', slot3: '', slot4: '', slot5: '' }
     ]
@@ -111,7 +77,7 @@ const addReminder = () => {
         }
 
     }
-
+    
     const dataSet = {
         data: {
             firstColumn: [...Array(13).keys()].map((item, idx) => { return { value: addZeroToDigits(item), index: idx } }),
@@ -133,9 +99,9 @@ const addReminder = () => {
 
     const status = false;
 
-    function getTime(time) {
-        realtime = [time[0].value, time[1].value, time[2].value]
-        return realtime;
+    const getTime = (time) => {
+        realtime = [ time[0].value, time[1].value, time[2].value]
+        return realtime
     }
 
     function create() {
@@ -167,13 +133,13 @@ const addReminder = () => {
         setTitle('')
     }
 
-
+    
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
             <Stack.Screen
                 options={{
-                    headerTitle: "Add reminder"
+                    headerTitle: "Edit reminder"
                 }}
             />
 
@@ -190,7 +156,7 @@ const addReminder = () => {
                     }}
                     firstSeperatorComponent={seperatorComponentRendererOne}
                     secondSeperatorComponent={seperatorComponentRendererTwo}
-                    seperatorContainerStyle={{}}
+                    seperatorContainerStyle={{ }}
                     scrollPickerOptions={{
                         itemHeight: 40,
                         wrapperHeight: 80,
@@ -277,4 +243,4 @@ const addReminder = () => {
     )
 }
 
-export default addReminder;
+export default editReminder;

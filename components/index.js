@@ -13,6 +13,8 @@ import List from "./medicine/list/medicineList";
 // reminder screen
 import Reminder from "./reminder/reminder";
 
+import editMedicine from "../app/medicine/editMedicine"
+
 
 // common
 import NearbyJobCard from "./common/cards/nearby/NearbyJobCard";
@@ -26,5 +28,6 @@ export {
   Slot,
   List,
   Reminder,
-  Footer
+  Footer,
+  editMedicine
 };

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Text, View, ScrollView, SafeAreaView, ActivityIndicator, RefreshControl, Image } from 'react-native'
 import { Stack, useRouter } from 'expo-router';
 
@@ -9,7 +9,10 @@ import styles from '../../components/common/bottomnav/bottomnav.style';
 
 import { Client, Message } from 'react-native-paho-mqtt';
 
-x = 1
+import { getDatabase, ref, set, update, child, get, onValue } from 'firebase/database';
+import { app } from '../../components/config';
+//import myStorage from '../..components/myStorage';
+
 
 //Set up an in-memory alternative to global localStorage
 const myStorage = {
@@ -22,80 +25,144 @@ const myStorage = {
     },
 };
 
+//export default myStorage;
+
 // Create a client instance
 const client = new Client({ uri: 'ws://broker.emqx.io:8083/mqtt', clientId: 'clientId', storage: myStorage });
 
-// set event handlers
+// Set event handlers
+client.on('messageReceived', (message) => {
+    const topic = message.destinationName;
+    const payload = message.payloadString;
+
+    //console.log(topic + " " + payload)
+    // Save the subscribed value to the database
+    const db = getDatabase();
+    const slotRef = ref(db, 'slot/' + topic);
+    update(slotRef, { value: payload })
+        .then(() => {
+            console.log('Value updated in the database');
+            console.log(topic + " " + payload)
+        })
+        .catch((error) => {
+            console.log('Error updating value in the database:', error);
+        });
+});
+
 client.on('connectionLost', (responseObject) => {
     if (responseObject.errorCode !== 0) {
-        console.log(responseObject.errorMessage);
+      console.log('onConnectionLost:', responseObject.errorMessage);
     }
-});
-client.on('messageReceived', (message) => {
-    console.log(message.payloadString);
-    x = message.payloadString
-});
+  });
 
-
-
-// connect the client
+// Connect the client
 client.connect()
     .then(() => {
-        // Once a connection has been made, make a subscription and send a message.
+        // Once a connection has been made, make subscriptions for all four slots.
         console.log('onConnect');
-        return client.subscribe('sensorIR');
+        const subscriptionPromises = [];
+
+        for (let i = 1; i <= 4; i++) {
+            const slotName = 'slot' + i;
+            subscriptionPromises.push(client.subscribe(slotName));
+        }
+
+        return Promise.all(subscriptionPromises);
     })
     .then(() => {
-        const message = new Message('Hello');
-        message.destinationName = 'sensorIR';
-        client.send(message);
+        console.log('Subscribed to all slots successfully');
+        // You can now start receiving slot state updates for all four slots
     })
     .catch((responseObject) => {
         if (responseObject.errorCode !== 0) {
             console.log('onConnectionLost:' + responseObject.errorMessage);
         }
     });
+    
+
 
 
 const medicine = () => {
     const router = useRouter();
+    const [med, setMed] = useState('');
+    const [slot, setSlot] = useState('');
 
-    const medicine = [
-        {
-            id: "1",
-            name: "Tylenol",
-            displayName: "Headache",
-            pill: "30",
-            slot: "1",
-            status: "",
-            image: "https://images.albertsons-media.com/is/image/ABS/960242448-A1C1?$ng-ecom-pdp-mobile$&defaultImage=Not_Available"
-        },
-        {
-            id: "2",
-            name: "Zyrtec",
-            displayName: "Allergy",
-            pill: "12",
-            slot: "2",
-            status: "",
-            image: "https://inwfile.com/s-cl/tmkmdi.jpg"
-        }
-    ]
+    useEffect(() => {
+        const db = getDatabase(app);
+
+        const starCountRef = ref(db, 'medicine/');
+        onValue(starCountRef, (snapshot) => {
+            const medicineData = snapshot.val();
+            console.log('og', medicineData)
+            if (medicineData !== null) {
+                setMed(medicineData)
+            }
+            // updateStarCount(postElement, data);
+        });
+
+        const slotRef = ref(db, 'slot/');
+        onValue(slotRef, (snapshot) => {
+            const slotData = snapshot.val();
+            console.log('og', slotData)
+            setSlot(slotData)
+            // updateStarCount(postElement, data);
+        });
+    }, [])
+
+    // let medicineData;
+
+
+    console.log('test', med)
+    console.log('slootttt', slot)
+    // Object.keys(med).map((x) => {
+    //     console.log('object ' + x + ' value ' + med[x].slot)
+    // })
+    // const medicine = JSONArray(Object.values(med));
+    const medicine = Object.entries(med).map(([key, value]) => ({ key, value }));
+    console.log('please', medicine)
+
+    const slotCheck = Object.entries(slot).map(([key, value]) => ({ key, value }));
+    console.log('slot checl', slotCheck)
+
+    const slotFinal = [];
+    slotCheck.map((item) => slotFinal.push(item.value.value))
+    console.log('slot final', slotFinal)
+
+    // const arr = Object.entries(obj).map(([key, value]) => ({ key, value }));
+
+    // console.log(arr);
+    // const medicine = [
+    //     {
+
+    //         name: "Tylenol",
+    //         desc: "Headache",
+
+    //         slot: "1",
+
+    //         amount: "https://images.albertsons-media.com/is/image/ABS/960242448-A1C1?$ng-ecom-pdp-mobile$&defaultImage=Not_Available"
+    //     },
+    //     {
+    //         id: "2",
+    //         name: "Zyrtec",
+    //         displayName: "Allergy",
+    //         pill: "12",
+    //         slot: "2",
+    //         status: "",
+    //         image: "https://inwfile.com/s-cl/tmkmdi.jpg"
+    //     }
+    // ]
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
             <Stack.Screen
                 options={{
                     headerStyle: { backgroundColor: COLORS.lightWhite },
-                    headerLeft: () => (
-                        <ScreenHeaderBtn
-                            iconUrl={icons.editAccent}
-                            dimension="60%" />
-                    ),
+                    headerLeft: () => (''),
                     headerRight: () => (
                         <ScreenHeaderBtn
                             iconUrl={icons.plusAccent}
-                            dimension="60%" 
-                            handlePress={() => router.push(`/medicine/addMedicine`)}/>
+                            dimension="60%"
+                            handlePress={() => router.push(`/medicine/addMedicine`)} />
                     ),
                     headerTitle: "Medicine"
                 }}
@@ -107,7 +174,7 @@ const medicine = () => {
                     paddingRight: SIZES.medium,
                     paddingLeft: SIZES.medium
                 }}>
-                <Slot slot1={x} />
+                <Slot slot1={slotFinal[0]} slot2={slotFinal[1]} slot3={slotFinal[2]} slot4={slotFinal[3]} />
             </View>
 
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -116,9 +183,14 @@ const medicine = () => {
                         flex: 1,
                         padding: SIZES.medium
                     }}>
-                    {medicine.map((item, index) => (
-                        <List item={item} key={index} />
-                    ))}
+                    {med ? <>
+                        {medicine.map((item) => (
+                            <List item={item.value} />
+                            // console.log('check', item.value.name)
+                        ))}
+                    </>:<Text style={styles.defaultText}>Click + to add your medicine first!</Text>}
+
+
                 </View>
             </ScrollView>
 
